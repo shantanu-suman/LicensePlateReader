@@ -249,7 +249,7 @@ def main():
         vehicles = st.session_state.db_manager.get_all_vehicles()
         
         if vehicles:
-            df = pd.DataFrame(vehicles, columns=['Plate Number', 'Owner', 'Type', 'Registration Date', 'Status'])
+            df = pd.DataFrame(vehicles, columns=['Plate Number', 'Owner', 'Type', 'Registration Date', 'Status']) if vehicles else pd.DataFrame([])
             
             # Display vehicles with delete option
             for idx, vehicle in enumerate(vehicles):

@@ -94,7 +94,7 @@ class ANPRLogger:
                 df = pd.read_csv(self.csv_file)
                 return df.tail(limit).sort_values('Timestamp', ascending=False)
             else:
-                return pd.DataFrame(columns=['Timestamp', 'Number_Plate', 'Status', 'Confidence', 'Camera_Index'])
+                return pd.DataFrame([], columns=['Timestamp', 'Number_Plate', 'Status', 'Confidence', 'Camera_Index'])
         except Exception as e:
             logging.error(f"Error reading logs: {e}")
             return pd.DataFrame()

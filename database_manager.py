@@ -135,7 +135,7 @@ class DatabaseManager:
                     ORDER BY detection_time DESC 
                     LIMIT ?
                 '''
-                return pd.read_sql_query(query, conn, params=(limit,))
+                return pd.read_sql_query(query, conn, params=[limit])
         except Exception as e:
             logging.error(f"Error fetching detection history: {e}")
             return pd.DataFrame()
